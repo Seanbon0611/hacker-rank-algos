@@ -1,3 +1,9 @@
+
+
+
+
+
+
 my_array = [[1,3,9], [7,4,2], [5,2,4]]
 
 def diagonalDifference(arr)
@@ -10,5 +16,5 @@ def diagonalDifference(arr)
     right_diag_sum += ar[-i-1]
   end
   #abs returns the absolute value of a number
-(right_diag_sum - left_diag_sum).abs
+  (right_diag_sum - left_diag_sum).abs
 end
