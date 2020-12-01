@@ -11,6 +11,9 @@ func countUniqueValues(arr []int) int {
 	//go through a loop starting at index of 1 and on
 	//if arr[i] != arr[j], incrememnt i by 1 and set arr[i] = arr[j]
 	//because arrays are 0 indexed we return i + 1
+	if len(arr) == 0 {
+		return 0
+	}
 	i := 0
 	for j := 1; j < len(arr); j++ {
 		if arr[i] != arr[j] {
