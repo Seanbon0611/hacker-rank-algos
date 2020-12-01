@@ -7,19 +7,21 @@ Implememnt a function called countUniqueValues which accepts a sorted array, and
 */
 
 func countUniqueValues(arr []int) int {
-	count := make(map[int]int)
-
-	for _, i := range arr {
-		if count[i] > 0 {
-			count[i]++
-		} else {
-			count[i] = 1
+	//set variable i at index of 0
+	//go through a loop starting at index of 1 and on
+	//if arr[i] != arr[j], incrememnt i by 1 and set arr[i] = arr[j]
+	//because arrays are 0 indexed we return i + 1
+	i := 0
+	for j := 1; j < len(arr); j++ {
+		if arr[i] != arr[j] {
+			i++
+			arr[i] = arr[j]
 		}
+		fmt.Println(i, arr[j])
 	}
-
-	return len(count)
+	return i + 1
 }
 
 func main() {
-	fmt.Println(countUniqueValues([]int{-3, -2, -1, 1}))
+	fmt.Println(countUniqueValues([]int{1, 1, 1, 2, 2, 3, 4}))
 }
